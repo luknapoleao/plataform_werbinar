@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plataforma de Webinar Ao Vivo</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Adiciona a biblioteca de ícones Font Awesome -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .video-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    video {
+      width: 100%;
+      max-width: 800px;
+    }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="video-container">
+      <video controls autoplay>
+        <source src="example.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="controls">
+        <button class="control-btn" data-description="Configurações: Personalize as configurações da reunião"><i class="fas fa-cog"></i></button> <!-- Ícone de engrenagem para configurações -->
+        <button class="control-btn" data-description="Atender Chamada: Atenda uma chamada na reunião"><i class="fas fa-phone-alt"></i></button> <!-- Ícone de telefone para atender chamada -->
+        <button class="control-btn" data-description="Convidar: Convide outras pessoas para a reunião"><i class="fas fa-user-plus"></i></button> <!-- Ícone de pessoa para convidar -->
+        <button class="control-btn" data-description="Quadro Branco: Colabore e ilustre conceitos complexos em tempo real"><i class="fas fa-pen"></i></button> <!-- Ícone de caneta para whiteboard -->
+        <button class="control-btn" data-description="Compartilhamento de Tela: Garanta uma visualização clara e sem lag"><i class="fas fa-desktop"></i></button> <!-- Ícone de monitor para screen sharing -->
+        <button class="control-btn" data-description="Perguntas & Respostas: Promova interação com a audiência em tempo real"><i class="fas fa-comment"></i></button> <!-- Ícone de balão de conversa para live Q&A -->
+        <button class="control-btn" data-description="Enquetes e Pesquisas: Avalie o feedback e o conhecimento da audiência"><i class="fas fa-poll"></i></button> <!-- Ícone de gráfico para polls e surveys -->
+        <button class="control-btn" data-description="Elementos de Gamificação: Engaje os participantes com pontos, distintivos e placares"><i class="fas fa-gamepad"></i></button> <!-- Ícone de joystick para gamification -->
+        <button class="control-btn" data-description="Legendas Automáticas: Melhore a acessibilidade com legendas em tempo real"><i class="fas fa-closed-captioning"></i></button> <!-- Ícone de legenda para automatic captioning -->
+        <button class="control-btn" data-description="Acesso a Gravações e Materiais: Forneça acesso a webinars anteriores e materiais adicionais"><i class="fas fa-film"></i></button> <!-- Ícone de filme para recordings & materials -->
+        <button class="control-btn" data-description="Suporte Multi-Dispositivo: Otimize a plataforma para uso em diferentes dispositivos"><i class="fas fa-laptop"></i></button> <!-- Ícone de laptop para cross-device support -->
+        <button class="control-btn" data-description="Integração de Análise de Dados: Utilize métricas para orientar melhorias futuras"><i class="fas fa-chart-line"></i></button> <!-- Ícone de gráfico para data analytics -->
+        <button class="control-btn" data-description="Mudar posição do apresentador e apresentação"><i class="fas fa-arrows-alt"></i></button> <!-- Ícone de setas para mudar posição do apresentador e apresentação -->
+      </div>
+    </div>
+  </div>
+  <div class="tooltip">Clique para ver a funcionalidade</div>
+  <script>
+    document.querySelectorAll('.control-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const description = btn.getAttribute('data-description');
+        document.querySelector('.tooltip').textContent = description;
+        document.querySelector('.tooltip').style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

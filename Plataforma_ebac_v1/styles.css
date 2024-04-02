@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff; /* Cor do texto */
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh; /* Centraliza na vertical */
+  }
+  
+  .video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  video {
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .control-btn {
+    background-color: #ff7f0e; /* Laranja */
+    color: #fff; /* Cor do texto dos botões */
+    border: none;
+    border-radius: 20px; /* Borda arredondada */
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transição suave */
+  }
+  
+  .control-btn:hover {
+    background-color: #ff934c; /* Laranja mais claro ao passar o mouse */
+  }
+  
+  .tooltip {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 999;
+  }
+  
+  @media (max-width: 600px) {
+    .control-btn {
+      font-size: 14px; /* Tamanho da fonte dos botões em telas menores */
+    }
+  }
+  
